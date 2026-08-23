@@ -32,7 +32,27 @@ To eliminate wire propagation delays ($RC$ lag) and maintain a stable **1 GHz ta
 
  
  
-[ HBM poort 0 ]               [ HBM poort 1 ]|                             |+-----------v-----------+     +-----------v-----------+| Cluster 0 | Cluster 1 |     | Cluster 2 | Cluster 3 ||-----------+-----------|     |-----------+-----------|| Cluster 4 | Cluster 5 |     | Cluster 6 | Cluster 7 |+-----------------------+     +-----------------------+================= HORIZONTALE SYSTEEMBUS (NoC) =================+-----------------------+     +-----------------------+| Cluster 8 | Cluster 9 |     | Cluster 10| Cluster 11||-----------+-----------|     |-----------+-----------|| Cluster 12| Cluster 13|     | Cluster 14| Cluster 15|+-----------------------+     +-----------------------+^              |              ^|              v              |[ HBM poort 2 ]  [SPARC CPU]  [ HBM poort 3 ] 
+          [ HBM port 0 ]               [ HBM port 1 ]
+
+                 |                             |
+     +-----------v-----------+     +-----------v-----------+
+
+     | Cluster 0 | Cluster 1 |     | Cluster 2 | Cluster 3 |
+     |-----------+-----------|     |-----------+-----------|
+     | Cluster 4 | Cluster 5 |     | Cluster 6 | Cluster 7 |
+     +-----------------------+     +-----------------------+
+================= HORIZONTALE SYSTEEMBUS (NoC) =================
+     +-----------------------+     +-----------------------+
+
+     | Cluster 8 | Cluster 9 |  *  | Cluster 10| Cluster 11|
+     |-----------+-----------|  |  |-----------+-----------|
+     | Cluster 12| Cluster 13|  |  | Cluster 14| Cluster 15|
+     +-----------------------+  |  +-----------------------+
+                 ^              |              ^
+
+                 |              v              |
+          [ HBM port 2 ]  [SPARC CPU]  [ HBM port 3 ]
+
 
 
 ---
