@@ -67,7 +67,8 @@ To eliminate wire propagation delays ($RC$ lag) and maintain a stable **1 GHz ta
     *   *5nm FinFET Process*: $\approx$ **$10.6 \text{ mm}^2$** raw transistor footprint ($3.2 \times 3.2 \text{ mm}$).
     *   *3nm FinFET Process*: $\approx$ **$7.2 \text{ mm}^2$** raw transistor footprint ($2.7 \times 2.7 \text{ mm}$).
     *   *Casing Layout*: Due to pad-limited constraints from the 4x 1024-bit HBM interfaces (1200+ physical ball grid array pinnen), the die footprint is extended to an **$8 \times 8 \text{ mm}$** packaging frame. The expansive surface area guarantees ultra-low thermal dissipation density under continuous 1 GHz workloads.
-
+*
+   *  *Note: when running : make run, (after installing verilator) one might get error 2 as the number of cores it too lareg for verilaor. Solution , in absolute_chip_top.sv, change this line :  .NUM_CORES(64),   to :  .NUM_CORES(2)  
 ---
 
 ## 🧭 Quad-Cluster Shared Memory Address Space
