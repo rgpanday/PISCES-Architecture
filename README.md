@@ -16,7 +16,7 @@ By enforcing a strict **256-bit unified data path** across both the CPU and GPU 
 ## 🚀 Key Architectural Breakthroughs (V5)
 
 *   **Symmetrical 256-Bit Data Path**: Both the CPU and GPU clusters operate on a unified 256-bit execution plane. A 256-bit vector can process either 32x INT8 AI weights, 16x FP16/BF16 activations, or 4x high-precision 64-bit cryptographic blocks (NTT/FFT) in a single clock cycle.
-*   **Superscalar CPU Reuse (4x ALU Merger)**: The host SPARC CPU utilizes 4 internal 64-bit arithmetic units. Instead of deploying a massive, separate vector coprocessor, hardware multiplexers physically wire these 4 ALU blocks together on-demand to execute native 256-bit vector loads, stores, and alignment checks directly out of the L3 Cache.
+*   **Superscalar CPU Reuse (4x ALU Merger)**: The RISC host  CPU utilizes 4 internal 64-bit arithmetic units. Instead of deploying a massive, separate vector coprocessor, hardware multiplexers physically wire these 4 ALU blocks together on-demand to execute native 256-bit vector loads, stores, and alignment checks directly out of the L3 Cache.
 *   **4x4 Symmetrical Matrix Grid**: The silicon is partitioned into 16 autonomous compute clusters arranged in a perfect 4x4 network topology. A central, high-speed Network-on-Chip (NoC) interconnect highway bisects the grid, positioning the SPARC host CPU at the exact center of signal propagation symmetry.
 *   **Quad-HBM Bus Alignment**: The 4x 1024-bit physical HBM memory channels interface at the 4 opposing margins of the chip casing. Each 1024-bit bus feeds exactly one quadrant of 4 compute clusters, dividing cleanly into native 256-bit wide memory streams ($1024 / 4 = 256$).
 *   **Hardware-Accelerated AI Primitives**: Includes dedicated assembler hooks for:
