@@ -156,6 +156,11 @@ $$b_{\text{total}} = \sqrt{(1.5)^2 + (0.7)^2 + (0.5)^2} = \sqrt{2.25 + 0.49 + 0.
 
 This mathematical equilibrium proves that the Piscator achieves an absolute, physical lateral printing envelope of **$\approx 1.73\text{ nm}$**, allowing flawless sub-2nm PISCES transistor gate replication without geometric pattern bleeding.
 
+#####  Resolving the Spatial Paradox: Normal Incidence Exposure vs. Grazing Substrate Confinement
+To eliminate geometric shadow distortion and prevent feature blurring, the Piscator implements an anisotropic dual-axis boundary control system:
+
+*   **Lateral Exposure Axis (Normal Incidence - 90°)**: The 1500.0 eV coherent X-ray wavefront strikes the 1:1 Silicon-Nitride proximity mask and the photoresist plane at a strict **90° normal incidence (perpendicular)**. This normal vector is mandatory to prevent geometric parallax run-out and shadow casting, freezing the 1--2 nm lateral gate geometries cleanly into the X/Y-plane of the resist.
+*   **Vertical Attenuation Axis (Internal Grazing Incidence - 0.591°)**: The theoretical critical angle ($\theta_c \approx 1.10°$) and the specific TU Wien inflection knee of **0.591°** (see xraydepthinsilicon.png)  govern the *internal quantum wave-guiding* within the chemical substrate layers. By aligning the internal atomic crystal lattices of the silicon base at a streping angle relative to the primary emission path, the down-converting evanescent wave forces a vertical energy cut-off. This confines the secondary electron activation volume strictly to the upper 3.5 nm to 10 nm Z-axis boundary of the photoresist, blocking catastrophic vertical energy leakage into the underlying bulk silicon substrate.
 
 
 ---
