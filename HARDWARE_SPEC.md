@@ -263,28 +263,29 @@ To prevent cross-contamination and outgassing failures within the ultra-high vac
 ### 🧼 B. Automated Solvent Developer & Chip-Washer
 *   **Fluid Delivery System**: Quad-nozzle automated spray assembly for selective dispensing of developer solvent (e.g., MIBK/IPA mix) and high-purity deionized water or isopropyl alcohol rinse.
 *   **Physical Isolation**: Divided from the main HHG vacuum dome via an automated **Vacuum Loadlock System**. Wafers are shuttled via a generic 2-axis robotic transfer arm, preserving the $10^{-4}\text{ Torr}$ exposure environment during automated track cycling.
+---
+    +-----------------------------------------------------------------+
 
-+-----------------------------------------------------------------+
+    
+    +-----------------------------------------------------------------+
 
-
-+-----------------------------------------------------------------+
-
-|                   THE PISCATOR SYSTEM FRAME                     |
-|                                                                 |
-|  [ ZONE 1: THE WET TRACK ]      [ ZONE 2: THE BEAM CHAMBER ]    |
-|  (Atmosferische druk + stikstof)  (Ultra-High vacuüm 10^-4 Torr)|
-|                                                                 |
-|   +-----------------------+         +-----------------------+   |
-|   | 1. RESIST SPINNER     |         | 3. HHG X-RAY FLASHER  |   |
-|   | (Coating on 4000 RPM) |         | (the 1 nm lighting)   |   |
-|   +-----------------------+         +-----------------------+   |
-|               |                                 ^               |
-|               v (Automatic shuttle              |               |
-|   +-----------------------+  Loadlock   |                   |   |
-|   | 2. DEVELOPER / WASHER | ----------> | (air lock shaft)  |   |
-|   | (Etching the  pattern)|             |                   |   |
-|   +-----------------------+             +----------  -----+ |
-+-----------------------------------------------------------------+
+    |                   THE PISCATOR SYSTEM FRAME                     |
+    |                                                                 |
+    |  [ ZONE 1: THE WET TRACK ]      [ ZONE 2: THE BEAM CHAMBER ]    |
+    |  (Atmosferische druk + stikstof)  (Ultra-High vacuüm 10^-4 Torr)|
+    |                                                                 |
+    |   +-----------------------+         +-----------------------+   |
+    |   | 1. RESIST SPINNER     |         | 3. HHG X-RAY FLASHER  |   |
+    |   | (Coating on 4000 RPM) |         | (the 1 nm lighting)   |   |
+    |   +-----------------------+         +-----------------------+   |
+    |               |                                 ^               |
+    |               v (Automatic shuttle              |               |
+    |   +-----------------------+  Loadlock   |                   |   |
+    |   | 2. DEVELOPER / WASHER | ----------> | (air lock shaft)  |   |
+    |   | (Etching the  pattern)|             |                   |   |
+    |   +-----------------------+             +----------  -----+ |
+    +-----------------------------------------------------------------+
+---
 
 ## 🔄 6. Cyclic Multi-Layer Automation & Mask Cassette System
 
