@@ -200,7 +200,8 @@ Below is the verified hardware attenuation table mapping the beam's grazing inci
 
 The dark regions are high-Z absorbers (electroplated Gold, $Au$), while the open, transparent regions allow the 1500.0 eV soft X-rays through the $Si_3N_4$ membrane. 
 
-The mask itself requires sub-micron replication patterning, utilizing electron-beam lithography or specialized nanostructured replication techniques onto the structural frame prior to automated carousel sorting.
+W absorber on Si₃N₄; macroscopic pre-reduction pattern.
+The absorber pattern is macroscopic and is intended for low-cost replication from a reusable master; no nanometre-scale absorber features are required at the mask stage.  Active-area dimensions to be determined from the PISCES layout and target spatial-reduction factor. The PISCES mask set is supplied with the Piscator system. Its macroscopic pre-reduction pattern is designed for low-cost master-based mass replication, making the mask set a minor consumable cost relative to the ~$100k system..
 
 ---
 ### 🛠️ Core Module Specifications
