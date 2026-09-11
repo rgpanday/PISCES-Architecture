@@ -162,6 +162,14 @@ To eliminate geometric shadow distortion and prevent feature blurring, the Pisca
 *   **Lateral Exposure Axis (Normal Incidence - 90°)**: The 1500.0 eV coherent X-ray wavefront strikes the 1:1 Silicon-Nitride proximity mask and the photoresist plane at a strict **90° normal incidence (perpendicular)**. This normal vector is mandatory to prevent geometric parallax run-out and shadow casting, freezing the 1--2 nm lateral gate geometries cleanly into the X/Y-plane of the resist.
 *   **Vertical Attenuation Axis (Internal Grazing Incidence - 0.591°)**: The theoretical critical angle ($\theta_c \approx 1.10°$) and the specific TU Wien inflection knee of **0.591°** (see xraydepthinsilicon.png)  govern the *internal quantum wave-guiding* within the chemical substrate layers. By aligning the internal atomic crystal lattices of the silicon base at a streping angle relative to the primary emission path, the down-converting evanescent wave forces a vertical energy cut-off. This confines the secondary electron activation volume strictly to the upper 3.5 nm to 10 nm Z-axis boundary of the photoresist, blocking catastrophic vertical energy leakage into the underlying bulk silicon substrate.
 
+The Piscator architecture targets a \(10^7\!-\!10^8\) linear spatial reduction, allowing millimetre- to centimetre-scale pre-reduction mask features to correspond to approximately 1–2 nm structures on the chip.
+
+At the selected 1.5-keV X-ray energy,
+
+$$ \lambda_X=\frac{1239.84}{1500}=0.827\ {\rm nm}. $$
+
+The calculated pre-thermalization electron inelastic-transport length is <0.8 nm, providing a sub-nanometre characteristic scale for the initial electron transport. This is treated as one component of the resolution budget rather than as the total lithographic blur.
+The remaining resolution budget is allocated to X-ray diffraction, secondary-electron transport, mask fidelity, resist response, and mechanical positioning. The \(10^7\!-\!10^8\) figure is the target spatial transformation; experimental validation of the complete exposure chain is required.
 
 ---
 
