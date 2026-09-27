@@ -1,6 +1,6 @@
 # PISCES: Parallel Instruction Set Computer Extended Architecture (V5)
 
-An open-source, massively parallel heterogeneous System-on-Chip (SoC) architecture optimized for the AI and Post-Quantum Cryptography (PQC) era. This topology integrates a highly efficient,  **RISC Host CPU** with a decentralized computing fabric of **65.536 Dynamic-Precision ALU Cores** distributed across a perfect 4x4 matrix grid. 
+An open-source, bit-scalable (8 bit to 256 bit) massively parallel heterogeneous System-on-Chip (SoC) architecture optimized for the AI and Post-Quantum Cryptography (PQC) era. This topology integrates a highly efficient,  **RISC Host CPU** with a decentralized computing fabric of **65.536 Dynamic-Precision ALU Cores** distributed across a perfect 4x4 matrix grid. 
 To ensure this project is instantly viable for startups and entrepreneurs without forcing the purchase of expensive commercial IP packages, the PISCES V5 architecture has been fully modernized:
 
 *   **Native RISC-V Host Integration**: The legacy SPARC host controller has been completely replaced with a royalty-free **64-bit RISC-V Control Core** (`rtl/riscv_host_core.sv`). 
@@ -124,7 +124,7 @@ void dispatch_256bit_tensor_pipeline() {
 To smash the capital-intensive barrier of proprietary multi-million dollar EUV scanner frameworks, the PISCES V5 topology is natively optimized for the **Piscator** near-surface lithography architecture, reducing capital entry costs from **>$200M to <$1M**.
 
 ### ⚛️ Near-Surface High-Harmonic Generation (HHG)
-*   **The Refractive Limitation**: Soft X-rays at 1 keV ($1.24\text{ nm}$) suffer from catastrophic absorption and a refractive index of $n \approx 1$ in all transmissive optical glass, rendering reduction lenses useless. 
+*   **The Refractive Limitation**: Soft X-rays at 1.5 keV ($1.24\text{ nm}$) suffer from catastrophic absorption and a refractive index of $n \approx 1$ in all transmissive optical glass, rendering reduction lenses useless. 
 *   **Coherent Pre-Reduction**: The Piscator transfers the burden of spatial reduction entirely to a high-purity **Deep-UV (DUV) Coherent Laser Source** (248nm/193nm), focused through standard quartz optics.
 *   **Instantaneous Gas-Target Conversion**: Within micrometers of the wafer plane, the highly compressed DUV wavefront collides with a supersonic micro-jet of high-purity Noble Gas (Neon/Argon). This drives extreme non-linear up-conversion (High-Harmonic Generation), generating a coherent **1 keV / 1.24nm Soft X-ray flash** directly above the target.
 *   **Zero-Distance Proximity Shadowing**: The freshly generated X-ray stream maps through a 1:1 goud-op-siliciumnitride ($Au/Si_3N_4$) membraanmasker hovered at a locked 200nm gap via piezo-electric interferometry, freezing pristine sub-2nm features into high-absorption photoresists in a single flash.
