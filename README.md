@@ -121,7 +121,7 @@ void dispatch_256bit_tensor_pipeline() {
 
 ## 🔬 Manufacturing Democratization: The Piscator Quantum-Laser Platform
 
-To smash the capital-intensive barrier of proprietary multi-million dollar EUV scanner frameworks, the PISCES V5 topology is natively optimized for the **Piscator** near-surface lithography architecture, reducing capital entry costs from **>$200M to <$1M**.
+To smash the capital-intensive barrier of proprietary multi-million dollar EUV scanner frameworks, the PISCES V5 topology is natively optimized for the **Piscator** near-surface lithography architecture, reducing capital entry costs from **>$200M to <$0.2M**.
 
 ### ⚛️ Near-Surface High-Harmonic Generation (HHG)
 *   **The Refractive Limitation**: Soft X-rays at 1.5 keV ($1.24\text{ nm}$) suffer from catastrophic absorption and a refractive index of $n \approx 1$ in all transmissive optical glass, rendering reduction lenses useless. 
