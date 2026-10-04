@@ -28,7 +28,7 @@ By enforcing a strict **256-bit unified data path** across both the CPU and GPU 
 
 ## 🗺️ Physical Hardware Topography & Floorplan
 
-To eliminate wire propagation delays ($RC$ lag) and maintain a stable **1 GHz target clock frequency**, the register files are physically interleaved directly adjacent to the arithmetic execution blocks.
+To eliminate wire propagation delays ($RC$ lag) and maintain a stable **2 GHz target clock frequency**, the register files are physically interleaved directly adjacent to the arithmetic execution blocks.
 
  
  
