@@ -3,7 +3,7 @@
 An open-source, bit-scalable (8 bit to 256 bit) massively parallel heterogeneous System-on-Chip (SoC) architecture optimized for the AI and Post-Quantum Cryptography (PQC) era. This topology integrates a highly efficient,  **RISC Host CPU** with a decentralized computing fabric of **65.536 Dynamic-Precision ALU Cores** distributed across a perfect 4x4 matrix grid. 
 To ensure this project is instantly viable for startups and entrepreneurs without forcing the purchase of expensive commercial IP packages, the PISCES V5 architecture has been fully modernized:
 
-*   **Native RISC-V Host Integration**: The legacy SPARC host controller has been completely replaced with a royalty-free **64-bit RISC-V Control Core** (`rtl/riscv_host_core.sv`). 
+*   **Native RISC-V Host Integration**: The legacy OpenRisc host controller has been completely replaced with a royalty-free **64-bit RISC-V Control Core** (`rtl/riscv_host_core.sv`). 
 *   **Out-of-the-Box Viability**: This repository is **100% complete**. It contains the entire compute pipeline, the host controller, and the memory controllers. Entrepreneurs can clone this repository, run `make run`, and verify the entire data flow immediately.
 *   **Commercial Production Safety**: Under the **CERN-OHL-W License**, anyone can manufacture this complete chip design commercially without paying a single euro in royalties or core licensing fees to major chip monopolies.
 
@@ -17,7 +17,7 @@ By enforcing a strict **256-bit unified data path** across both the CPU and GPU 
 
 *   **Symmetrical 256-Bit Data Path**: Both the CPU and GPU clusters operate on a unified 256-bit execution plane. A 256-bit vector can process either 32x INT8 AI weights, 16x FP16/BF16 activations, or 4x high-precision 64-bit cryptographic blocks (NTT/FFT) in a single clock cycle.
 *   **Superscalar CPU Reuse (4x ALU Merger)**: The RISC host  CPU utilizes 4 internal 64-bit arithmetic units. Instead of deploying a massive, separate vector coprocessor, hardware multiplexers physically wire these 4 ALU blocks together on-demand to execute native 256-bit vector loads, stores, and alignment checks directly out of the L3 Cache.
-*   **4x4 Symmetrical Matrix Grid**: The silicon is partitioned into 16 autonomous compute clusters arranged in a perfect 4x4 network topology. A central, high-speed Network-on-Chip (NoC) interconnect highway bisects the grid, positioning the SPARC host CPU at the exact center of signal propagation symmetry.
+*   **4x4 Symmetrical Matrix Grid**: The silicon is partitioned into 16 autonomous compute clusters arranged in a perfect 4x4 network topology. A central, high-speed Network-on-Chip (NoC) interconnect highway bisects the grid, positioning the OpenRisc host CPU at the exact center of signal propagation symmetry.
 *   **Quad-HBM Bus Alignment**: The 4x 1024-bit physical HBM memory channels interface at the 4 opposing margins of the chip casing. Each 1024-bit bus feeds exactly one quadrant of 4 compute clusters, dividing cleanly into native 256-bit wide memory streams ($1024 / 4 = 256$).
 *   **Hardware-Accelerated AI Primitives**: Includes dedicated assembler hooks for:
     *   `DOT32`: 32-parallel INT8 matrix dot products for high-density neural inference.
@@ -41,7 +41,7 @@ To eliminate wire propagation delays ($RC$ lag) and maintain a stable **2 GHz ta
      |-----------+-----------|     |-----------+-----------|
      | Cluster 4 | Cluster 5 |     | Cluster 6 | Cluster 7 |
      +-----------------------+     +-----------------------+
-================= HORIZONTALE SYSTEEMBUS (NoC) =================
+================= HORIZONTAL SYSTEM BUS (NoC) =================
      +-----------------------+     +-----------------------+
 
      | Cluster 8 | Cluster 9 |  *  | Cluster 10| Cluster 11|
@@ -51,7 +51,7 @@ To eliminate wire propagation delays ($RC$ lag) and maintain a stable **2 GHz ta
                  ^              |              ^
 
                  |              v              |
-          [ HBM port 2 ]  [SPARC CPU]  [ HBM port 3 ]
+          [ HBM port 2 ]  [OpenRisc CPU]  [ HBM port 3 ]
 
 
 
@@ -78,12 +78,12 @@ To eliminate wire propagation delays ($RC$ lag) and maintain a stable **2 GHz ta
 
 ## 🧭 Quad-Cluster Shared Memory Address Space
 
-The centralized 16 MB L3 Cache acts as an asymmetric mailbox between the SPARC control layer and the parallel computing banks.
+The centralized 16 MB L3 Cache acts as an asymmetric mailbox between the OpenRisc control layer and the parallel computing banks.
 
 | Base Address | End Address | Size | Allocation Target | Security Boundary |
 | :--- | :--- | :--- | :--- | :--- |
-| `0x0000000` | `0x00FFFFF` | 1 MB | Host OS Kernel & Boot ROM | SPARC Only (Read-Only) |
-| `0x0100000` | `0x03FFFFF` | 3 MB | CPU Active Stack & Variables | SPARC Only (Read/Write) |
+| `0x0000000` | `0x00FFFFF` | 1 MB | Host OS Kernel & Boot ROM | OpenRisc Only (Read-Only) |
+| `0x0100000` | `0x03FFFFF` | 3 MB | CPU Active Stack & Variables | OpenRisc Only (Read/Write) |
 | `0x0400000` | `0x09FFFFF` | 6 MB | Distributed GPU Inputs (Sectie A-D) | Shared Domain (Read/Write) |
 | `0x0A00000` | `0x0FFFFFF` | 6 MB | Distributed GPU Outputs (Sectie A-D)| Shared Domain (Read/Write) |
 
@@ -111,7 +111,7 @@ void dispatch_256bit_tensor_pipeline() {
     // 2. Fire the unified doorbell register to activate all cores simultaneously
     *REG_START_ALL = 1; 
     
-    // 3. SPARC CPU instantly drops back to standard 64-bit OS operations.
+    // 3. OpenRisc CPU instantly drops back to standard 64-bit OS operations.
     // When the hardware interrupt hits, the CPU reads the 256-bit block in 1 cycle:
     uint256_t matrix_result = GPU_OUT_BUFFER[0];
 }
